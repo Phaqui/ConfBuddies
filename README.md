@@ -26,9 +26,15 @@ Things you may want to cover:
 
 * ...
 
-# Environment Setup
-This application has a development environment that supports docker.
+# Development Environment Setup (new devs, start here!)
+This application has a development environment that supports docker. Make sure your development
+system has `docker` (and `docker compose`) installed. Consult your system's guides on how to set it up for your system.
 
-Run `docker compose up -d` and the application should be available at localhost:3000.
+1: Run `docker compose up -d` to download, build, and launch the application through docker magic.
+After some time it should be available on `localhost:3000`.
 
-If the database has not been started, `docker compose run --rm web bundle exec rake db:create`.
+2: (Initial setup) Create the database with
+`docker compose run --rm web bundle exec rake db:create`.
+
+3: (Initial setup) Run database migrations with
+`docker compose run --rm web bundle exec rake db:migrate`.
